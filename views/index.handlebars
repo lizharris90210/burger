@@ -1,3 +1,59 @@
-<h1>Burgers!</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-{{!-- button that submits user input into database --}}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./public/assets/css/burger_style.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Burgers!</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+
+<body class="p-3 mb-2 bg-$cyan text-dark">
+    <div class="jumbotron">
+        <div class="container-fluid" id="header">
+            <h1 class="text-center">Burgers!</h1>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="row" id="input-row">
+        <div class="col-sm text-left">
+            One/Three
+        </div>
+    </div>
+
+    <div class="col-sm text-center">
+        <form class="col-6 center">
+            <label for="buger-input">Enter Desired Burger</label>
+            <textarea class="form-control" id="burger-text-input" rows="2"></textarea>
+    </div>
+    </form>
+
+
+    <div class="col-sm text-right">
+        One/Three
+    </div>
+
+
+    <br>
+
+    <div class="row" id="burgers-to-devour">
+        <div class="col-sm text-left">
+            waiting for devour
+        </div>
+        <div class="col-sm text-center">
+            <button type="button" class="btn btn-secondary">Devour button</button>
+        </div>
+        <div class="col-sm text-right">
+            devoured
+        </div>
+    </div>
+
+    {{{ body }}}
+</body>
+
+</html>

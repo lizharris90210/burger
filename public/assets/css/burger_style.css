@@ -1,0 +1,11 @@
+a {
+    background-color: var(--cyan);
+}
+
+h1 {
+    text-align: center;
+}
+
+.button {
+    background-color: rgb(255, 128, 0);
+}
