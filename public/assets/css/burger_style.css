@@ -1,5 +1,5 @@
-a {
-    background-color: var(--cyan);
+body {
+    background-color: rgb(35, 116, 170);
 }
 
 h1 {
@@ -7,5 +7,10 @@ h1 {
 }
 
 .button {
-    background-color: rgb(255, 128, 0);
+    background-color: cyan;
 }
+
+li {
+    padding: 5px;
+    margin: 5px;
+  }

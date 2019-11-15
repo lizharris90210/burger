@@ -3,57 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./public/assets/css/burger_style.css" type="text/css" />
+    <link rel="stylesheet" href="./public/assets/css/burger_style.css" type="html/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Burgers!</title>
     <script src="https://code.jquery.com/jquery.js"></script>
+
+    <title>Burgers!</title>
 
 </head>
 
-<body class="p-3 mb-2 bg-$cyan text-dark">
-    <div class="jumbotron">
+<body style="background-color:rgb(35, 116, 170)" ;>
+
+    <div class="jumbotron" style="background-color:rgb(35, 116, 170" ;>
         <div class="container-fluid" id="header">
-            <h1 class="text-center">Burgers!</h1>
+            <h1 class="text-center" style="color:white";>Burgers!</h1>
         </div>
     </div>
 
     <br><br>
 
-    <div class="row" id="input-row">
-        <div class="col-sm text-left">
-            One/Three
+    <div class="container-fluid center col-6">
+        <form>
+            <label for="buger-input">Enter Desired Burger</label>
+            <textarea class="form-control" id="burger-text-input" rows="1"></textarea>
+        </form>
+
+        <div class="row" id="submit-button">
+            <div class="col-sm text-right">
+                <button type="button" class="btn btn-secondary">Submit Burger</button>
+            </div>
         </div>
     </div>
-
-    <div class="col-sm text-center">
-        <form class="col-6 center">
-            <label for="buger-input">Enter Desired Burger</label>
-            <textarea class="form-control" id="burger-text-input" rows="2"></textarea>
-    </div>
-    </form>
-
-
-    <div class="col-sm text-right">
-        One/Three
-    </div>
-
 
     <br>
 
     <div class="row" id="burgers-to-devour">
-        <div class="col-sm text-left">
+        <div class="col-sm text-right">
             waiting for devour
+            <ul>
+                {{#each cats}}
+                {{#unless sleepy}}
+                {{> cats/cat-block sleep=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+
         </div>
         <div class="col-sm text-center">
             <button type="button" class="btn btn-secondary">Devour button</button>
         </div>
-        <div class="col-sm text-right">
+        <div class="col-sm text-left">
             devoured
+            <ul>
+                {{#each cats}}
+                {{#if sleepy}}
+                {{> cats/cat-block sleep=false}}
+                {{/if}}
+                {{/each}}
+            </ul>
         </div>
     </div>
 
     {{{ body }}}
+
 </body>
 
 </html>
