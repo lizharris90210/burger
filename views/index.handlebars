@@ -1,71 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./public/assets/css/burger_style.css" type="html/css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery.js"></script>
-
-    <title>Burgers!</title>
-
-</head>
-
-<body style="background-color:rgb(35, 116, 170)" ;>
-
-    <div class="jumbotron" style="background-color:rgb(35, 116, 170" ;>
-        <div class="container-fluid" id="header">
-            <h1 class="text-center" style="color:white";>Burgers!</h1>
-        </div>
+<div class="container-fluid" id="header">
+    <div class="jumbotron">
+        <h1 class="text-center">Devour Burgers</h1>
+        <br>
+        <h2 class="text-center">Select Burger</h2>
+        <panel>
+            <form class="create-form">
+                <div class="text-center form-group">
+                    <label for="newBurger"></label>
+                    <input type="text" id="newBurger" name="burger">
+                    <button type="submit" class="btn btn-success" id="addBurger"> Order
+                        <span class="fa fa-thumbs-up"></span>
+                    </button>
+                </div>
+            </form>
+        </panel>
     </div>
+</div>
 
-    <br><br>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading" id="leftside">Order Burger</div>
+            <div class="panel-body">
 
-    <div class="container-fluid center col-6">
-        <form>
-            <label for="buger-input">Enter Desired Burger</label>
-            <textarea class="form-control" id="burger-text-input" rows="1"></textarea>
-        </form>
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <span> {{this.id}} - {{this.burger_name}} </span>
+                    <button type="button" class="eatBurger btn btn-warning" id="eatButton" data-id="{{this.id}}"
+                        data-newDevoured="{{devour}}">Devour
+                        <span class="fa fa-usd"> </button>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
 
-        <div class="row" id="submit-button">
-            <div class="col-sm text-right">
-                <button type="button" class="btn btn-secondary">Submit Burger</button>
             </div>
         </div>
     </div>
 
-    <br>
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading" id="leftside">Devoured Burger</div>
+            <div class="panel-body">
 
-    <div class="row" id="burgers-to-devour">
-        <div class="col-sm text-right">
-            waiting for devour
-            <ul>
-                {{#each cats}}
-                {{#unless sleepy}}
-                {{> cats/cat-block sleep=true}}
-                {{/unless}}
-                {{/each}}
-            </ul>
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <span> {{this.id}} - {{this.burger_name}} </span>
+                    <button type="button" class="trashBurger btn btn-warning" id="trashButton" data-id="{{this.id}}"
+                        data-newDevoured="{{devour}}">
+                        <span class="fa fa-trash"> </button>
+                    {{/if}}
+                    {{/each}}
+                </ul>
 
-        </div>
-        <div class="col-sm text-center">
-            <button type="button" class="btn btn-secondary">Devour button</button>
-        </div>
-        <div class="col-sm text-left">
-            devoured
-            <ul>
-                {{#each cats}}
-                {{#if sleepy}}
-                {{> cats/cat-block sleep=false}}
-                {{/if}}
-                {{/each}}
-            </ul>
+            </div>
         </div>
     </div>
 
-    {{{ body }}}
 
-</body>
 
-</html>
+    </body>
+
+    </html>

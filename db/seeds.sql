@@ -1,53 +1,18 @@
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('Plain');
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('with Cheese');
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('with Bacon');
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('with Cheese and Bacon');
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('with Chili');
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('with Cheese and Chili');
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('with Cole Slaw');
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('with Cole Slaw and Chili');
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('Vegetarian');
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('Fish');
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('Fish with Cole Slaw');
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('Turkey');
-INSERT INTO burgers
-    (burger_name)
-VALUES
-    ('Turkey with Cheese');
+USE burgers_db;
 
+INSERT INTO burgers
+    (burger_name, devoured)
+VALUES
+    ('Plain', false),
+    ('with Cheese', false),
+    ('with Bacon', false),
+    ('with Cheese and Bacon', false),
+    ('with Chili', false),
+    ('with Cheese and Chili', false),
+    ('with Cole Slaw', false),
+    ('with Cole Slaw and Chili', false),
+    ('Vegetarian', false),
+    ('Fish', false),
+    ('Fish with Cole Slaw', false),
+    ('Turkey', false),
+    ('Turkey with Cheese', false);
