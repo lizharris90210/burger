@@ -1,7 +1,6 @@
-$(function() {
-  $("create-form").on("submit", function(event) {
+$(document).ready(function() {
+  $(".create-form").on("submit", function(event) {
     event.preventDefault();
-
     var newBurger = {
       burger_name: $("#newBurger")
         .val()
@@ -13,7 +12,6 @@ $(function() {
       type: "POST",
       data: newBurger
     }).then(function() {
-      console.log("New burger added!");
       location.reload();
     });
   });
@@ -30,7 +28,7 @@ $(function() {
       type: "PUT",
       data: devouredState
     }).then(function() {
-      console.timeLog("Burger devoured!");
+      console.log("Burger devoured!");
       location.reload();
     });
   });

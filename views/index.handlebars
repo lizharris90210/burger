@@ -29,7 +29,7 @@
                     <span> {{this.id}} - {{this.burger_name}} </span>
                     <button type="button" class="eatBurger btn btn-warning" id="eatButton" data-id="{{this.id}}"
                         data-newDevoured="{{devour}}">Devour
-                        <span class="fa fa-usd"> </button>
+                        <span class="fa fa-usd"> </button><br>
                     {{/unless}}
                     {{/each}}
                 </ul>
@@ -49,7 +49,7 @@
                     <span> {{this.id}} - {{this.burger_name}} </span>
                     <button type="button" class="trashBurger btn btn-warning" id="trashButton" data-id="{{this.id}}"
                         data-newDevoured="{{devour}}">
-                        <span class="fa fa-trash"> </button>
+                        <span class="fa fa-trash"> </button><br>
                     {{/if}}
                     {{/each}}
                 </ul>

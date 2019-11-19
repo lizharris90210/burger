@@ -8,16 +8,18 @@ function createQmarks(num) {
   return arr.toString();
 }
 
-function translateSql(obj) {
+function translateSql(ob) {
+  var arr = [];
   for (var key in ob) {
     var value = ob[key];
-    if (Pbject.hasOwnProperty.call(ob, key)) {
-      if (typeOf(value) === "string" && value.indexOf(" ") >= 0) {
+    if (Object.hasOwnProperty.call(ob, key)) {
+      if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
       arr.push(key + "=" + value);
     }
   }
+  return arr.toString();
 }
 
 var orm = {
@@ -36,8 +38,10 @@ var orm = {
     var dbQuery =
       "INSERT INTO " +
       table +
-      " (" +
-      "VALUES (" +
+      " ( " +
+      cols.toString() +
+      " ) " +
+      "VALUES ( " +
       createQmarks(vals.length) +
       ") ";
     console.log(dbQuery);
@@ -59,7 +63,7 @@ var orm = {
       condition;
 
     console.log(dbQuery);
-    connection.query(dbQuery, vals, function(err, res) {
+    connection.query(dbQuery, function(err, res) {
       if (err) {
         throw err;
       }
@@ -71,7 +75,7 @@ var orm = {
     var dbQuery = "DELETE FROM " + table + " WHERE " + condition;
 
     console.log(dbQuery);
-    connection.query(dbQuery, vals, function(err, res) {
+    connection.query(dbQuery, function(err, res) {
       if (err) {
         throw err;
       }
