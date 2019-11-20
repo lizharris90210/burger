@@ -22,6 +22,8 @@ The Burger App runs from a GitHub connection to Heroku, where it was deloyed.
 
 The Burger App uses MySQL database to create, read, update, and delete burger selections, which can then be clicked to devour. When devoured, the burgers move to the devoured column where they can be deleted.
 
+![Screen Recording](public/assets/img/ScreenRecording.mov)
+
 ### Link
 
 https://lizharris90210.github.io/burger/
