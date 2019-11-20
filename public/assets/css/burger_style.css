@@ -1,16 +1,29 @@
 body {
-    background-color: rgb(35, 116, 170);
+    font-family: 'Tomorrow', sans-serif;
+}
+
+img {
+    height: 150px;
+    width: 150px;
 }
 
 h1 {
     text-align: center;
 }
 
-.button {
-    background-color: cyan;
-}
-
 li {
     padding: 5px;
     margin: 5px;
   }
+
+.addBurger {
+    background-color: rgb(26, 133, 17);
+}
+
+.eatBurger {
+background-color: #d6a916;
+}
+
+.trashBurger {
+    background-color: #eb4015;
+}
