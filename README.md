@@ -26,9 +26,9 @@ The Burger App uses MySQL database to create, read, update, and delete burger se
 
 ### Link
 
-https://lizharris90210.github.io/burger/
+[Burger App](https://lizharris90210.github.io/burger/)
 
-https://burger-assignment-uncbootcamp.herokuapp.com/
+[Burger on Heroku](https://burger-assignment-uncbootcamp.herokuapp.com/)
 
 ### Credits
 
