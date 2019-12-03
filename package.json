@@ -1,7 +1,11 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "",
+  "description": "burger logger",
+  "engines": {
+    "node": "12.6.0",
+    "npm": "6.9.0"
+  },
   "main": "index.js",
   "scripts": {
     "test": "npm run server.js",
